@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { Counter } from './components/counter/counter.component';
+import { Search } from './components/search/search.component';
+import { TodoList } from './components/todolist/todolist.component';
+import { TodoItem } from './components/todoitem/todoitem.component';
+import { CreateButton } from './components/createbutton/createbutton.component';
+
+
+const list  =[
+  {text:'asdas'},
+  {text:'asdaas'},
+  {text:'asdasaaa'},
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Counter/>
+    <Search/>
+    <TodoList>
+      {list.map(element =>{
+        return (
+          <TodoItem key={element.text} text={element.text}/>
+        )
+      })}
+    </TodoList>
+    <CreateButton/>
+    </>
   );
 }
 
