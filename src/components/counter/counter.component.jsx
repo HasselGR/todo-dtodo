@@ -1,9 +1,9 @@
 import React from "react";
 import './counter.styles.css';
 
-export const Counter = () =>{
+export const Counter = ({total, completed}) =>{
     return(
-        <h2 className="todo-counter">You have completed 2 of 3 TODOs</h2>
+        <h2 className="todo-counter">You have completed {completed} of {total} TODOs</h2>
     );
 }
 
